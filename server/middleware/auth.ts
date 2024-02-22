@@ -18,8 +18,9 @@ export default defineEventHandler(async (event) => {
     }
   }
 
+  console.log('INITIALIZING AUTH MIDDLEWARE', event.context.cloudflare)
   // Initialize auth (Lucia)
-  const { DB } = event.context.cloudflare.env
+  const { DB } = event.context.cloudflare?.env
 
   if (!lucia) {
     lucia = initializeLucia(DB)

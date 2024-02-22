@@ -35,6 +35,7 @@ async function handleRegister() {
       body: formData,
     })
   } catch (error: any) {
+    console.log(error)
     toast.add({ title: error.response._data.message })
   }
 
@@ -49,6 +50,8 @@ async function handleRegister() {
     <UCard class="w-80">
       <template #header>Login</template>
       <div class="space-y-4">
+        <UButton block label="Login with Google" icon="i-logos-google" to="/auth/google" external />
+        
         <UButton block label="Login with GitHub" icon="i-heroicons-oauth" to="/api/login/github" external />
         <p class="text-center text-sm py-1 text-gray-400">OR</p>
         <UInput v-model="username" name="username" placeholder="Username" icon="i-heroicons-user" />

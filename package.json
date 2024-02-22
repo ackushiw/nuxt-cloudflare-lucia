@@ -9,21 +9,26 @@
     "postinstall": "nuxt prepare",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:migrate": "wrangler d1 migrations apply demo --local",
-    "db:migrate:prod": "wranger d1 migrations apply demo",
-    "db:studio": "drizzle-kit studio"
+    "db:migrate:prod": "wrangler d1 migrations apply demo",
+    "db:studio": "drizzle-kit studio",
+    "wrangler:dev": "wrangler pages dev --d1 DB=1ec66335-3979-4573-9d9f-1b345ceccfa7 -- nuxt dev",
+    "wrangler:preview": "wrangler pages dev dist/ --d1 DB=1ec66335-3979-4573-9d9f-1b345ceccfa7"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.20.13",
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/nuxt": "^10.7.2",
+    "drizzle-kit": "^0.20.14",
     "nitro-cloudflare-dev": "^0.0.7",
-    "nuxt": "^3.9.3",
-    "wrangler": "^3.25.0"
+    "nuxt": "^3.10.2",
+    "wrangler": "^3.28.2"
   },
   "dependencies": {
     "@lucia-auth/adapter-sqlite": "^3.0.0",
-    "@nuxt/ui": "^2.12.3",
-    "arctic": "^1.1.0",
+    "@nuxt/ui": "^2.13.0",
+    "arctic": "^1.1.6",
     "drizzle-orm": "^0.29.3",
     "lucia": "^3.0.1",
-    "oslo": "^1.0.3"
+    "oslo": "^1.1.1"
   }
 }

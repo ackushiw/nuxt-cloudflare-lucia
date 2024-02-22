@@ -1,0 +1,1 @@
+ALTER TABLE session ADD `google_access_token` text;
